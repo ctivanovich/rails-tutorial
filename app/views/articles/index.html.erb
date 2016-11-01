@@ -1,0 +1,15 @@
+<h1>All Articles</h1>
+
+<ul id="articles">
+  <% @articles.each do |article| %>
+    <li>
+      <!--The %= returns the output of the Ruby code to the html document-->
+      <!--<%= link_to article.title, article_path(article) %> -->
+      <%= link_to article.title, article_path(article),
+      class: 'article_title', id: "article_#{article.id}" %>
+
+      <!--<%= article.title %>-->
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
